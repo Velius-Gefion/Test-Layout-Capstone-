@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>About Me - Sei Illustrates</title>
+	<title>Sample Appointment Website</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
@@ -11,59 +11,33 @@
 
 <body class="bgCover" style="text-align:center;">
 	<nav class="navbar navbar-expanded-sm bg-dark navbar-dark fixed-top">
-		<a class="navbar-brand" href="#">Sei-Illustrates</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-	    	<span class="navbar-toggler-icon"></span>
-	  	</button>
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-		    <ul class="navbar-nav">
-			    <li class="nav-item">
-		        	<a class="nav-link" href="index.html">ABOUT ME</a>
-	    	    </li>
-			    <li class="nav-item">
-		        	<a class="nav-link" href="art.html">ARTS AND GRAPHIC DESIGNS</a>
-	    	    </li>
-			    <li class="nav-item">
-			        <a class="nav-link" href="https://vel-is-cy.itch.io/">GAMES</a>
-		      	</li>
-		      	<li class="nav-item">
-		    	    <a class="nav-link" href="system.html">SYSTEMS</a>
-			    </li>
-			    <li class="nav-item">
-		    	    <a class="nav-link" href="cv.html">CURRICULUM VITAE</a>
-			    </li>
-		    </ul>
-		</div>
+		<a class="navbar-brand" href="index.html">Clinic Name</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="log-in.html">Log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Register</a>
+                </li>
+            </ul>
 	</nav>
 	
-
-	<div class="container" style="margin-top:60px">
+	<div class="container mx-auto" id="center" style="margin-top:60px">
 		<div class="row">
-			<div class="col-sm-4">
-				<div class="face">
-
+			<div class="col-sm-5">
+				<div class="container-fluid pt-4 pb-4" style="text-align: justify;">
+					<h3>THIS PART SHOULD HAVE A PICTURE OR SOMETHING. AMBOT TEST PANI SYA</h3>
 				</div>
 			</div>
 
 			<div class="col">
-				<div class="container-fluid pt-4 pb-4" style="text-align: center;">
-					<h4>Graphic Designer, Web Developer, Software Developer, etc.</h4>
-				</div>
-
-				<div class="container pt-3 pb-2">
-					<h5 style="text-align: left;">Hey There!</h5>
+				<div class="container pt-2 pb-2">
 					<p style="text-align: justify">
-						<br>
-						I'm Cyril. I'm a 4th Year IT student based in Philippines.
-						<br>
-						<br>
-						I am capable of making a website, coding a system, layout graphic designs, logo making, and video editing.
-						<br>
-						<br>
-						This website is built to act as my portfolio to showcase what I am capable of.
-						<br>
-						<br>
-						For business inquiries, please contact me at veliusgefion@gmail.com
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque orci eget dolor finibus condimentum. Etiam convallis tellus et ligula dapibus, vitae cursus urna iaculis. Fusce interdum dolor nec interdum auctor. Fusce et mollis leo. Aenean feugiat nisl sollicitudin dignissim consequat. Donec ac eros ut felis congue pulvinar vel vel dolor.
+					</p>
+                    <br>
+                    <p style="text-align: justify">
+						Nunc fringilla ante et leo ullamcorper viverra. Cras nulla mi, convallis ut feugiat quis, aliquam in lorem. In varius efficitur consectetur. Morbi sit amet odio est. In non tempor elit. Cras sed urna euismod, tristique ex a, pulvinar orci. Quisque mollis sollicitudin fermentum. Quisque dictum aliquam sodales.
 					</p>
 				</div>
 			</div>
@@ -82,7 +56,14 @@
 	    background-position-x: 100%;
 	    background-repeat: no-repeat;
 	}
-
+    #center
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 85vh;
+      margin: 0;
+    }
 	.container
 	{
 		width: 90% !important;
