@@ -42,7 +42,7 @@
                     <a class="nav-link" href="#" data-section="appointment-history">Appointment History</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Log out</a>
+                    <a class="nav-link" href="#" data-section="logout">Log out</a>
                 </li>
             </ul>
         </div>
@@ -222,6 +222,11 @@
                 $('.settings-form').hide();
                 $('#' + formId + '-form').show();
             }
+
+            $('a[data-section="logout"]').on('click', function (e) {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            });
         });
     </script>
 </body>

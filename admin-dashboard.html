@@ -46,7 +46,7 @@
                     <a class="nav-link" href="#" data-section="waiting-list">Waiting List Management</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Logout</a>
+                    <a class="nav-link" href="#" data-section="logout">Logout</a>
                 </li>
             </ul>
         </div>
@@ -159,129 +159,134 @@
         </section>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            showSection('doctor-database');
+<script>
+    $(document).ready(function () {
+        showSection('doctor-database');
 
-            $('.nav-link').on('click', function (e) {
-                e.preventDefault();
-                var section = $(this).data('section');
-                showSection(section);
-            });
-
-            function showSection(section) {
-                $('.dashboard-section').hide();
-                $('#' + section).show();
-            }
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+            var section = $(this).data('section');
+            showSection(section);
         });
 
-        $(document).ready(function ()
-        {
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
+        function showSection(section) {
+            $('.dashboard-section').hide();
+            $('#' + section).show();
+        }
+    });
+
+    $(document).ready(function ()
+    {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: [
+                {
+                    title: 'Doctor Appointment',
+                    start: '2024-01-01T10:00:00',
+                    end: '2024-01-01T11:00:00',
                 },
-                events: [
-                    {
-                        title: 'Doctor Appointment',
-                        start: '2024-01-01T10:00:00',
-                        end: '2024-01-01T11:00:00',
-                    },
-                    {
-                        title: 'Patient Checkup',
-                        start: '2024-01-01T14:00:00',
-                        end: '2024-01-01T15:00:00',
-                    },
-                ],
-            });
+                {
+                    title: 'Patient Checkup',
+                    start: '2024-01-01T14:00:00',
+                    end: '2024-01-01T15:00:00',
+                },
+            ],
         });
+    });
 
-        $(document).ready(function () {
-            var today = moment().format('YYYY-MM-DD');
-            var waitingListSchedules = [
-                '10:00 AM - Doctor Appointment',
-                '02:00 PM - Patient Checkup',
-            ];
-
-            var waitingList = $('#waiting-list-schedules');
-            waitingList.empty();
-
-            waitingListSchedules.forEach(function (schedule) {
-                waitingList.append('<li>' + schedule + '</li>');
-            });
-        });
-
-        var doctorsData = [
-            { name: 'Dr. John Doe', specialization: 'Cardiologist', status: 'Present' },
-            { name: 'Dr. Jane Smith', specialization: 'Dermatologist', status: 'Absent' },
+    $(document).ready(function () {
+        var today = moment().format('YYYY-MM-DD');
+        var waitingListSchedules = [
+            '10:00 AM - Doctor Appointment',
+            '02:00 PM - Patient Checkup',
         ];
 
-        var doctorDatabaseSection = $('#doctor-database');
-        doctorDatabaseSection.empty();
+        var waitingList = $('#waiting-list-schedules');
+        waitingList.empty();
 
-        doctorsData.forEach(function (doctor) {
-            var cardHtml = `
-            <div class="card mt-3">
-                <div class="card-body">
-                    <h5 class="card-title">${doctor.name}</h5>
-                    <p class="card-text"><strong>Specialization:</strong> ${doctor.specialization}</p>
-                    <p class="card-text"><strong>Status:</strong> ${doctor.status}</p>
-                </div>
-            </div>
-        `;
-            doctorDatabaseSection.append(cardHtml);
+        waitingListSchedules.forEach(function (schedule) {
+            waitingList.append('<li>' + schedule + '</li>');
         });
+    });
 
-        var patientsData = [
-            { name: 'John Smith', age: 35, gender: 'Male' },
-            { name: 'Jane Doe', age: 28, gender: 'Female' },
-        ];
+    var doctorsData = [
+        { name: 'Dr. John Doe', specialization: 'Cardiologist', status: 'Present' },
+        { name: 'Dr. Jane Smith', specialization: 'Dermatologist', status: 'Absent' },
+    ];
 
-        var patientDatabaseSection = $('#patient-database');
-        patientDatabaseSection.empty();
+    var doctorDatabaseSection = $('#doctor-database');
+    doctorDatabaseSection.empty();
 
-        patientsData.forEach(function (patient, index) {
-            var cardHtml = `
-            <div class="card mt-3">
-                <div class="card-body">
-                    <h5 class="card-title">${patient.name}</h5>
-                    <p class="card-text"><strong>Age:</strong> ${patient.age}</p>
-                    <p class="card-text"><strong>Gender:</strong> ${patient.gender}</p>
-                    <a href="#" class="btn btn-info view-history" data-patient-id="${index + 1}">View History</a>
-                    <a href="#" class="btn btn-warning update-history" data-patient-id="${index + 1}">Update History</a>
-                </div>
+    doctorsData.forEach(function (doctor) {
+        var cardHtml = `
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">${doctor.name}</h5>
+                <p class="card-text"><strong>Specialization:</strong> ${doctor.specialization}</p>
+                <p class="card-text"><strong>Status:</strong> ${doctor.status}</p>
             </div>
-        `;
-        patientDatabaseSection.append(cardHtml);
+        </div>
+    `;
+        doctorDatabaseSection.append(cardHtml);
+    });
+
+    var patientsData = [
+        { name: 'John Smith', age: 35, gender: 'Male' },
+        { name: 'Jane Doe', age: 28, gender: 'Female' },
+    ];
+
+    var patientDatabaseSection = $('#patient-database');
+    patientDatabaseSection.empty();
+
+    patientsData.forEach(function (patient, index) {
+        var cardHtml = `
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">${patient.name}</h5>
+                <p class="card-text"><strong>Age:</strong> ${patient.age}</p>
+                <p class="card-text"><strong>Gender:</strong> ${patient.gender}</p>
+                <a href="#" class="btn btn-info view-history" data-patient-id="${index + 1}">View History</a>
+                <a href="#" class="btn btn-warning update-history" data-patient-id="${index + 1}">Update History</a>
+            </div>
+        </div>
+    `;
+    patientDatabaseSection.append(cardHtml);
     });
 
     $('.view-history').on('click', function (e) {
+        e.preventDefault();
+        var patientId = $(this).data('patient-id');
+        showPatientHistory(patientId);
+    });
+
+    $('.update-history').on('click', function (e) {
+        e.preventDefault();
+        var patientId = $(this).data('patient-id');
+        $('#updatePatientHistoryModal').modal('show');
+    });
+
+    $('#btnUpdateHistory').on('click', function () {
+        var updatedHistory = $('#updatedHistory').val();
+
+        $('#updatePatientHistoryModal').modal('hide');
+    });
+
+    function showPatientHistory(patientId) {
+        var patientHistory = "Patient history details go here.";
+
+        $('#patientHistoryName').text("John Smith");
+        $('#patientHistoryContent').text(patientHistory);
+
+        $('#patientHistoryModal').modal('show');
+    }
+
+    $('a[data-section="logout"]').on('click', function (e)
+    {
             e.preventDefault();
-            var patientId = $(this).data('patient-id');
-            showPatientHistory(patientId);
-        });
-
-        $('.update-history').on('click', function (e) {
-            e.preventDefault();
-            var patientId = $(this).data('patient-id');
-            $('#updatePatientHistoryModal').modal('show');
-        });
-
-        $('#btnUpdateHistory').on('click', function () {
-            var updatedHistory = $('#updatedHistory').val();
-
-            $('#updatePatientHistoryModal').modal('hide');
-        });
-
-        function showPatientHistory(patientId) {
-            var patientHistory = "Patient history details go here.";
-
-            $('#patientHistoryName').text("John Smith");
-            $('#patientHistoryContent').text(patientHistory);
-
-            $('#patientHistoryModal').modal('show');
-        }
-
-     </script>
+            window.location.href = 'index.html';
+    });
+</script>
