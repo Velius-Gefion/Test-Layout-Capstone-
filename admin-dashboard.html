@@ -1,120 +1,287 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>Sample Appointment Website</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Appointment Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .dashboard-section {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Admin Dashboard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#doctor-database">Doctor Database</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#patient-database">Patient Database</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#schedule-calendar">Schedule Calendar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#waiting-list">Waiting List Management</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Logout</a>
-              </li>
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" data-section="doctor-database">Doctor Database</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="patient-database">Patient Database</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="schedule-calendar">Schedule Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-section="waiting-list">Waiting List Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout</a>
+                </li>
+            </ul>
         </div>
-      </nav>
-      
-      <!-- Main Content -->
-      <div class="container mt-4">
-        <!-- Doctor Database Section -->
-        <section id="doctor-database">
-          <h2>Doctor Database</h2>
-          <!-- Your doctor database content goes here -->
+    </nav>
+
+    <div class="container mt-4">
+        <section id="doctor-database" class="dashboard-section">
+            <h2>Doctor Database</h2>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Dr. John Doe</h5>
+                    <p class="card-text"><strong>Specialization:</strong> Cardiologist</p>
+                    <p class="card-text"><strong>Status:</strong> Present</p>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Dr. Jane Smith</h5>
+                    <p class="card-text"><strong>Specialization:</strong> Dermatologist</p>
+                    <p class="card-text"><strong>Status:</strong> Absent</p>
+                </div>
+            </div>
+
+
         </section>
-      
-        <!-- Patient Database Section -->
-        <section id="patient-database" class="mt-4">
-          <h2>Patient Database</h2>
-          <!-- Your patient database content goes here -->
+
+        <section id="patient-database" class="mt-4 dashboard-section">
+            <h2>Patient Database</h2>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">John Smith</h5>
+                    <p class="card-text"><strong>Age:</strong> 35</p>
+                    <p class="card-text"><strong>Gender:</strong> Male</p>
+                    <a href="#" class="btn btn-info view-history" data-patient-id="1">View History</a>
+                    <a href="#" class="btn btn-warning update-history" data-patient-id="1">Update History</a>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Jane Doe</h5>
+                    <p class="card-text"><strong>Age:</strong> 28</p>
+                    <p class="card-text"><strong>Gender:</strong> Female</p>
+                    <a href="#" class="btn btn-info view-history" data-patient-id="2">View History</a>
+                    <a href="#" class="btn btn-warning update-history" data-patient-id="2">Update History</a>
+                </div>
+            </div>
+
+
         </section>
-      
-        <!-- Schedule Calendar Section -->
-        <section id="schedule-calendar">
+
+        <div class="modal fade" id="patientHistoryModal" tabindex="-1" role="dialog"
+            aria-labelledby="patientHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="patientHistoryModalLabel">Patient History</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Patient Name:</strong> <span id="patientHistoryName"></span></p>
+                        <p><strong>History:</strong> <span id="patientHistoryContent"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="updatePatientHistoryModal" tabindex="-1" role="dialog"
+            aria-labelledby="updatePatientHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updatePatientHistoryModalLabel">Update Patient History</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="updatedHistory">Updated History:</label>
+                            <textarea class="form-control" id="updatedHistory" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnUpdateHistory">Update History</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="schedule-calendar" class="dashboard-section">
             <h2>Schedule Calendar</h2>
-            <!-- Calendar -->
             <div id="calendar"></div>
         </section>
 
-        <!-- Waiting List Management Section -->
-        <section id="waiting-list" class="mt-4">
+        <section id="waiting-list" class="mt-4 dashboard-section">
             <h2>Waiting List Management</h2>
-            <!-- List of Schedules from the Current Day -->
             <h4>Schedules for Today</h4>
             <ul id="waiting-list-schedules">
-            <!-- Dynamically populate this list using JavaScript -->
             </ul>
         </section>
-      </div>
-</body>
-</html>
+    </div>
 
-<script>
-    // Initialize FullCalendar
-    $(document).ready(function() {
-      $('#calendar').fullCalendar({
-        // Customize your calendar options here
-        // Example:
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-        events: [
-          // Example events, replace with your actual events
-          {
-            title: 'Doctor Appointment',
-            start: '2024-01-01T10:00:00',
-            end: '2024-01-01T11:00:00',
-          },
-          {
-            title: 'Patient Checkup',
-            start: '2024-01-01T14:00:00',
-            end: '2024-01-01T15:00:00',
-          },
-        ],
-      });
+    <script>
+        $(document).ready(function () {
+            showSection('doctor-database');
+
+            $('.nav-link').on('click', function (e) {
+                e.preventDefault();
+                var section = $(this).data('section');
+                showSection(section);
+            });
+
+            function showSection(section) {
+                $('.dashboard-section').hide();
+                $('#' + section).show();
+            }
+        });
+
+        $(document).ready(function ()
+        {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: [
+                    {
+                        title: 'Doctor Appointment',
+                        start: '2024-01-01T10:00:00',
+                        end: '2024-01-01T11:00:00',
+                    },
+                    {
+                        title: 'Patient Checkup',
+                        start: '2024-01-01T14:00:00',
+                        end: '2024-01-01T15:00:00',
+                    },
+                ],
+            });
+        });
+
+        $(document).ready(function () {
+            var today = moment().format('YYYY-MM-DD');
+            var waitingListSchedules = [
+                '10:00 AM - Doctor Appointment',
+                '02:00 PM - Patient Checkup',
+            ];
+
+            var waitingList = $('#waiting-list-schedules');
+            waitingList.empty();
+
+            waitingListSchedules.forEach(function (schedule) {
+                waitingList.append('<li>' + schedule + '</li>');
+            });
+        });
+
+        var doctorsData = [
+            { name: 'Dr. John Doe', specialization: 'Cardiologist', status: 'Present' },
+            { name: 'Dr. Jane Smith', specialization: 'Dermatologist', status: 'Absent' },
+        ];
+
+        var doctorDatabaseSection = $('#doctor-database');
+        doctorDatabaseSection.empty();
+
+        doctorsData.forEach(function (doctor) {
+            var cardHtml = `
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">${doctor.name}</h5>
+                    <p class="card-text"><strong>Specialization:</strong> ${doctor.specialization}</p>
+                    <p class="card-text"><strong>Status:</strong> ${doctor.status}</p>
+                </div>
+            </div>
+        `;
+            doctorDatabaseSection.append(cardHtml);
+        });
+
+        var patientsData = [
+            { name: 'John Smith', age: 35, gender: 'Male' },
+            { name: 'Jane Doe', age: 28, gender: 'Female' },
+        ];
+
+        var patientDatabaseSection = $('#patient-database');
+        patientDatabaseSection.empty();
+
+        patientsData.forEach(function (patient, index) {
+            var cardHtml = `
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">${patient.name}</h5>
+                    <p class="card-text"><strong>Age:</strong> ${patient.age}</p>
+                    <p class="card-text"><strong>Gender:</strong> ${patient.gender}</p>
+                    <a href="#" class="btn btn-info view-history" data-patient-id="${index + 1}">View History</a>
+                    <a href="#" class="btn btn-warning update-history" data-patient-id="${index + 1}">Update History</a>
+                </div>
+            </div>
+        `;
+        patientDatabaseSection.append(cardHtml);
     });
-  
-    // Populate the waiting list with schedules for today
-    $(document).ready(function() {
-      var today = moment().format('YYYY-MM-DD');
-      var waitingListSchedules = [
-        // Example schedules for today, replace with your actual schedules
-        '10:00 AM - Doctor Appointment',
-        '02:00 PM - Patient Checkup',
-      ];
-  
-      var waitingList = $('#waiting-list-schedules');
-      waitingList.empty();
-  
-      waitingListSchedules.forEach(function(schedule) {
-        waitingList.append('<li>' + schedule + '</li>');
-      });
-    });
-  </script>
+
+    $('.view-history').on('click', function (e) {
+            e.preventDefault();
+            var patientId = $(this).data('patient-id');
+            showPatientHistory(patientId);
+        });
+
+        $('.update-history').on('click', function (e) {
+            e.preventDefault();
+            var patientId = $(this).data('patient-id');
+            $('#updatePatientHistoryModal').modal('show');
+        });
+
+        $('#btnUpdateHistory').on('click', function () {
+            var updatedHistory = $('#updatedHistory').val();
+
+            $('#updatePatientHistoryModal').modal('hide');
+        });
+
+        function showPatientHistory(patientId) {
+            var patientHistory = "Patient history details go here.";
+
+            $('#patientHistoryName').text("John Smith");
+            $('#patientHistoryContent').text(patientHistory);
+
+            $('#patientHistoryModal').modal('show');
+        }
+
+     </script>
